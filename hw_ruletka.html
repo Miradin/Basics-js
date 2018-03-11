@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+var v = 1;
+do {
+           var ch = +prompt("Введите 1 для выхода: ");
+           if (ch == 1) {
+               alert("Bye!");
+               break;
+           } else if (Math.round((Math.random() * 6)) == 2) {
+               alert("Финита ля комедия.");
+               alert("Вас прибила попытка номер " + v);
+           } else 
+               v++;
+   } while (true)
+</script> 

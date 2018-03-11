@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<script>
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getCard() {
+	var cards = ['6','7','8','9','10','J','Q','K','A'];
+	return cards[getRandomInt(0, cards.length - 1)];
+}
+
+function getSum(arr) {
+	var cardSum = 0;
+	for (var i = 0; i<arr.length; i++){
+		if (arr[i] == 'J'|| arr[i] == 'Q' || arr[i] == 'K') { 
+			cardSum = cardSum + 10;
+		}
+		else if (arr[i] == 'A') {
+			cardSum = cardSum + 11;
+		}
+		else {
+			cardSum = cardSum + parseInt(arr[i]);
+		}
+	}
+	return cardSum;
+}
+
+var dealer = [getCard()];
+var player = [getCard(), getCard()];
+
+alert("Dealer got: " + dealer.join(' ') + "\nPlayer got: " + player.join(' '));
+alert("Current summ of player's cards: " + getSum(player));
+</script>
